@@ -4,6 +4,20 @@ Webfluxdemo
 
 Simple demo app to use reactive functionality to consume some endpoints and store them in mongodb
 
+# The idea
+
+Idea behind this is to execute some steps in following order:
+
+1. Receives a *transaction* request that contains a Post Id to search
+2. Stores an initial record in mongodb
+3. Call an Endpoint to get information for Post
+4. Update post information in database
+5. Call an Endpoint to get Information for first Photo for a UserId (from retrieved Post)
+6. Update photo information in database
+7. Return Stored information in database
+
+Any feedback is welcome
+
 # Running it
 
 http://localhost:8080/api/v1/transactions
