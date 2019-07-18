@@ -16,7 +16,29 @@ Idea behind this is to execute some steps in following order:
 6. Update photo information in database
 7. Return Stored information in database
 
-Any feedback is welcome
+## Implementations
+
+There are two implementations to achieve above steps:
+
+### TransactionService
+
+Implements functionality using private methods to call each step 
+
+```java
+// TransactionService#manageTransaction calls each private method  
+private Mono<Transaction> manageTransaction(Transaction transaction)   
+```
+
+### TransService
+
+Implements functionality with out using private methods all steps are inside 
+  
+```java
+//TransactionService#manageTransaction do all steps in this single metho  
+private Mono<Transaction> manageTransaction(Transaction transaction)   
+```
+
+_Any feedback is welcome_
 
 # Running it
 
