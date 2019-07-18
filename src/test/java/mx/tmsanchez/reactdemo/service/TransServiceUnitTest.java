@@ -22,7 +22,7 @@ import static org.mockito.ArgumentMatchers.any;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class TransactionServiceUnitTest {
+public class TransServiceUnitTest {
 
     @MockBean
     private IPostService postService;
@@ -34,7 +34,7 @@ public class TransactionServiceUnitTest {
     private TransactionRepository transactionRepository;
 
     @Autowired
-    private ITransactionService transactionService;
+    private ITransService transactionService;
 
     @Test
     public void shouldRetrieveTransaction() {
@@ -53,7 +53,7 @@ public class TransactionServiceUnitTest {
         Mono<Transaction> monoTransaction = transactionService.postTransaction(transactionRequest);
 
         StepVerifier.create(monoTransaction)
-                .expectNextMatches( this::transactionMatches)
+                .expectNextMatches(this::transactionMatches)
                 .verifyComplete();
     }
 
@@ -79,8 +79,8 @@ public class TransactionServiceUnitTest {
     @TestConfiguration
     private static class SetupTest {
         @Bean
-        public ITransactionService transactionService() {
-            return new TransactionService();
+        public ITransService transactionService() {
+            return new TransService();
         }
     }
 }
