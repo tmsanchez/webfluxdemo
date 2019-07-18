@@ -34,7 +34,7 @@ private Mono<Transaction> manageTransaction(Transaction transaction)
 Implements functionality with out using private methods all steps are inside 
   
 ```java
-//TransactionService#manageTransaction do all steps in this single metho  
+//TransService#manageTransaction do all steps in this single metho  
 private Mono<Transaction> manageTransaction(Transaction transaction)   
 ```
 
